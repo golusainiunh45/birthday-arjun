@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Arjun!</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #1a1a1a, #333333);
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .container {
+      padding: 100px 30px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 4em;
+      color: #ffcc00;
+      margin-bottom: 20px;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    p {
+      font-size: 1.5em;
+      line-height: 2em;
+      max-width: 800px;
+      margin: 20px auto;
+      color: #ddd;
+    }
+
+    @keyframes glow {
+      0% {
+        text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00;
+      }
+      100% {
+        text-shadow: 0 0 20px #ff6600, 0 0 40px #ff3300;
+      }
+    }
+
+    .firework {
+      position: fixed;
+      width: 6px;
+      height: 6px;
+      background: white;
+      border-radius: 50%;
+      animation: explode 1s ease-out infinite;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    @keyframes explode {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(15);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Fireworks everywhere -->
+  <script>
+    function createFirework() {
+      const firework = document.createElement('div');
+      firework.classList.add('firework');
+      firework.style.top = Math.random() * window.innerHeight + 'px';
+      firework.style.left = Math.random() * window.innerWidth + 'px';
+      firework.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 60%)`;
+      firework.style.animationDuration = (0.5 + Math.random()) + 's';
+      document.body.appendChild(firework);
+
+      setTimeout(() => {
+        firework.remove();
+      }, 1000);
+    }
+
+    setInterval(() => {
+      for (let i = 0; i < 10; i++) {
+        createFirework();
+      }
+    }, 300);
+  </script>
+
+  <!-- Birthday Message -->
+  <div class="container">
+    <h1>🎂 Happy Birthday Arjun 🎉</h1>
+    <p>
+      Dear Arjun,<br><br>
+      Aaj ka din sirf tumhara hai! Tum jiyo hazaaron saal, har saal ke din ho pachaas hazaar! 🥳<br><br>
+      Teri muskaan kabhi kam na ho, tera confidence hamesha high rahe. Chahe duniya kuch bhi kahe,
+      tu apne sapne sach karne ke liye bana hai. Aaj ke din tujhe duniya ki har khushi mil jaye,
+      har dua teri ho jaye, aur har sapna pura ho jaye! 🙌<br><br>
+      Ye patakhe, ye roshni, aur ye celebration — sab teri success aur energy ke naam! 💥<br><br>
+      From your friends, with tons of love and crazy wishes. Keep rocking, Arjun! 😎🎁
+    </p>
+    <p>
+      🎇 Doston ki taraf se ek dhamakedaar happy birthday!
+    </p>
+    <p style="margin-top: 1000px;">👑 Keep scrolling... kyunki celebration kabhi khatam nahi hoti!</p>
+  </div>
+
+  <!-- Background music -->
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-buddy.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+</body>
+</html>
